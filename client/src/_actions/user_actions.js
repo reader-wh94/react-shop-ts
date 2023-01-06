@@ -9,7 +9,7 @@ import {
     REMOVE_CART_ITEM,
     ON_SUCCESS_BUY
 } from './types';
-import { USER_SERVER } from '../components/Config.js';
+import { USER_SERVER } from '../components/Config.ts';
 
 export function registerUser(dataToSubmit){
     const request = axios.post(`${USER_SERVER}/register`,dataToSubmit)
