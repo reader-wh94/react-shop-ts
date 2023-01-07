@@ -3,9 +3,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.onSuccessBuy = exports.removeCartItem = exports.getCartItems = exports.addToCart = exports.logoutUser = exports.auth = exports.loginUser = exports.registerUser = void 0;
 var axios_1 = require("axios");
 var types_1 = require("./types");
-var Config_js_1 = require("../components/Config.js");
+var Config_ts_1 = require("../components/Config.ts");
 function registerUser(dataToSubmit) {
-    var request = axios_1.default.post(Config_js_1.USER_SERVER + "/register", dataToSubmit)
+    var request = axios_1.default.post(Config_ts_1.USER_SERVER + "/register", dataToSubmit)
         .then(function (response) { return response.data; });
     return {
         type: types_1.REGISTER_USER,
@@ -14,7 +14,7 @@ function registerUser(dataToSubmit) {
 }
 exports.registerUser = registerUser;
 function loginUser(dataToSubmit) {
-    var request = axios_1.default.post(Config_js_1.USER_SERVER + "/login", dataToSubmit)
+    var request = axios_1.default.post(Config_ts_1.USER_SERVER + "/login", dataToSubmit)
         .then(function (response) { return response.data; });
     return {
         type: types_1.LOGIN_USER,
@@ -23,7 +23,7 @@ function loginUser(dataToSubmit) {
 }
 exports.loginUser = loginUser;
 function auth() {
-    var request = axios_1.default.get(Config_js_1.USER_SERVER + "/auth")
+    var request = axios_1.default.get(Config_ts_1.USER_SERVER + "/auth")
         .then(function (response) { return response.data; });
     return {
         type: types_1.AUTH_USER,
@@ -32,7 +32,7 @@ function auth() {
 }
 exports.auth = auth;
 function logoutUser() {
-    var request = axios_1.default.get(Config_js_1.USER_SERVER + "/logout")
+    var request = axios_1.default.get(Config_ts_1.USER_SERVER + "/logout")
         .then(function (response) { return response.data; });
     return {
         type: types_1.LOGOUT_USER,
@@ -44,7 +44,7 @@ function addToCart(id) {
     var body = {
         productId: id
     };
-    var request = axios_1.default.post(Config_js_1.USER_SERVER + "/addToCart", body)
+    var request = axios_1.default.post(Config_ts_1.USER_SERVER + "/addToCart", body)
         .then(function (response) { return response.data; });
     return {
         type: types_1.ADD_TO_CART,
